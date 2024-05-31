@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Build and Push Image') {
             steps {
-                sh 'docker build -t project_name . && docker push project_name'
+                sh 'docker build -t Devops2 . && docker push Devops2'
             }
         }
         stage('Deploy to Jenkins') {
             steps {
                 script {
-                    def server = 'your_jenkins_server_url'
-                    def username = 'your_jenkins_username'
-                    def password = 'your_jenkins_password'
-                    def jobName = 'your_jenkins_job_name'
+                    def server = 'http://13.51.45.88:8080/'
+                    def username = 'crypto2kama'
+                    def password = 'Q1ilfcccMJ'
+                    def jobName = 'kama2'
 
                     withCredentials([
-                        usernamePassword(credentialsId: 'jenkins-credentials', username: username, password: password)
+                        usernamePassword(credentialsId: 'jenkins-credentials', username: crypto2kama, password: Q1ilfcccMJ)
                     ]) {
                         def connection = new URL(server).openConnection()
                         connection.setRequestProperty('Authorization', 'Basic ' + Base64.getEncoder().encodeToString("${username}:${password}".getBytes()))
