@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build and Push Image') {
             steps {
-                sh 'docker build -t Devops2 . && docker push Devops2'
+                sh 'docker build -t docker-compose.yml . && docker push docker-compose.yml'
             }
         }
         stage('Deploy to Jenkins') {
